@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">  
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+  <script type="text/javascript" src="main.js"></script>
+
+  <title>eventum-white</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-wrap">
+        <div class="logo">
+          <a href="#"><img src="image/logo.png"/></a>
+        </div>
+        <div class="topnav">
+          <ul id="mynav">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">EXPLORE</a></li>
+            <li><a href="#">SCEDULE</a></li>
+            <li><a href="#">SPEAKERS</a></li>
+            <li><a href="#">PRICE</a></li>
+            <li><a href="#">BLOG</a></li>
+          </ul>
+        </div>
+      
+        <div class="header-btn">
+          <a href="#" class="button button-yellow">Buy Ticket</a>
+
+          <a class="bar-icon" href="javascript:void(0);" onclick="myFunction()">
+              <i class="fas fa-bars"></i>
+          </a>
+        </div>
+
+
+          
+        
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-wrap">
+      <div class="container">
+        <div id="clockdiv">
+            <div>
+              <span class="days yellow"></span>
+              <div class="smalltext">DAY</div>
+            </div>
+            <div>
+              <span class="hours orange"></span>
+              <div class="smalltext">HOUR</div>
+            </div>
+            <div>
+              <span class="minutes sky-blue"></span>
+              <div class="smalltext">MINUTE</div>
+            </div>
+            <div>
+              <span class="seconds light-green"></span>
+              <div class="smalltext">SECOND</div>
+            </div>
+        </div>
+          
+        <script>
+            function getTimeRemaining(endtime) {
+              var t = Date.parse(endtime) - Date.parse(new Date());
+              var seconds = Math.floor((t / 1000) % 60);
+              var minutes = Math.floor((t / 1000 / 60) % 60);
+              var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+              var days = Math.floor(t / (1000 * 60 * 60 * 24));
+              return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+              };
+          }
+
+            function initializeClock(id, endtime) {
+              var clock = document.getElementById(id);
+              var daysSpan = clock.querySelector('.days');
+              var hoursSpan = clock.querySelector('.hours');
+              var minutesSpan = clock.querySelector('.minutes');
+              var secondsSpan = clock.querySelector('.seconds');
+
+              function updateClock() {
+                var t = getTimeRemaining(endtime);
+
+                daysSpan.innerHTML = t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                if (t.total <= 0) {
+                  clearInterval(timeinterval);
+                }
+              }
+
+              updateClock();
+              var timeinterval = setInterval(updateClock, 1000);
+            }
+
+            var deadline = new Date(Date.parse(new Date()) + 91 * 24 * 60 * 60 * 1000);
+            initializeClock('clockdiv', deadline);
+
+        </script>
+
+        <div class="hero-text">
+            <h1>music concert 2018</h1>
+            <p class="intro">18 - 21 december, 2018, Dublin</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="feature-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="feature-img">
+            <img src="image/feature-img.jpg" alt="feature-image" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="feature-content">
+            <div class="feature-text">
+              <h3>Music Concert 2018</h3>
+              <h5>Where All The New Artists Meets</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no strud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+            </div>
+            <div class="feature-btn-group">
+              <a href="#" class="button button-pink">Buy Ticket</a>
+              <a href="#" class="button button-light-green">See Vanue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="event-section">
+
+    <div class="container">
+        <div class="section-headline">
+          <h2>Event  Schedule</h2>
+        </div>
+        <div class="event-content-wrap">
+          <div class="row">
+            <div class="col-3">
+              <div class="event-dates pink">
+                <h3>18</h3>
+                <span>Dec,2015</span>
+              </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                  <p>10:30 - 11:00</p>
+                  <h5>CREATING PRODUCTIVITY</h5>
+                  <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                  <p>10:30 - 11:00</p>
+                  <h5>FINDING SUPPLIER</h5>
+                  <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                    <p>10:30 - 11:00</p>
+                    <h5>PRODUCT LINES</h5>
+                    <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-content-wrap">
+          <div class="row">
+            <div class="col-3">
+              <div class="event-dates purple">
+                <h3>19</h3>
+                <span>Dec,2015</span>
+              </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                  <p>10:30 - 11:00</p>
+                  <h5>CREATING PRODUCTIVITY</h5>
+                  <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                  <p>10:30 - 11:00</p>
+                  <h5>FINDING SUPPLIER</h5>
+                  <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                    <p>10:30 - 11:00</p>
+                    <h5>PRODUCT LINES</h5>
+                    <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-content-wrap">
+          <div class="row">
+            <div class="col-3">
+              <div class="event-dates orange">
+                <h3>20</h3>
+                <span>Dec,2015</span>
+              </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                  <p>10:30 - 11:00</p>
+                  <h5>CREATING PRODUCTIVITY</h5>
+                  <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                  <p>10:30 - 11:00</p>
+                  <h5>FINDING SUPPLIER</h5>
+                  <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="event-text">
+                    <p>10:30 - 11:00</p>
+                    <h5>PRODUCT LINES</h5>
+                    <span>Speker: NEIL VOGEL</span> 
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>    
+  </section>
+
+  <section class="speaker-section">
+    <div class="container">
+      <div class="section-headline">
+        <h2>Who's Speaking?</h2>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="thumb-wrap">
+            <div class="speaker-thumb">
+              <div class="thumb-img">
+                <img src="image/thumb-img-1.jpg" alt="thumb-image" />
+              </div>
+              <div class="thumb-text">
+                <h5>Kirt McMaster</h5>
+                <p>GM, The boxtrap</p>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget risus sollicitudin pellentesque et non erat. </span>
+                <div class="thumb-social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="thumb-wrap">
+            <div class="speaker-thumb">
+              <div class="thumb-img">
+                <img src="image/thumb-img-2.jpg" alt="thumb-image" />
+              </div>
+              <div class="thumb-text">
+                <h5>Kirt McMaster</h5>
+                <p>GM, The boxtrap</p>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget risus sollicitudin pellentesque et non erat. </span>
+                <div class="thumb-social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="pricing-section">
+    <div class="pricing-section-wrap">
+      <div class="container">
+        <div class="section-headline">
+            <h2>Buy Ticket</h2>
+            <div class="row">
+              <div class="col-4">
+                <div class="content-wrap">
+                  <div class="price-top">
+                    <h5>Personal</h5>
+                  </div>
+                  <div class="price-amount sky-blue">
+                    <h4>$100</h4>
+                  </div>
+                  <p>Entrance</p>
+                  <p>Coffee Break</p>
+                  <p>Certificate</p>
+                  <p>Workshop</p>
+                  <div class="pricing-btn">
+                    <a href="#" class="button button-sky-blue">Buy Ticket</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="pricing-content-background">
+                  <div class="content-wrap">
+                    <div class="price-top white">
+                      <h5>Company</h5>
+                    </div>
+                    <div class="price-amount white">
+                      <h4>$200</h4>
+                    </div>
+                    <div class="white">
+                      <p>Entrance</p>
+                      <p>Coffee Break</p>
+                      <p>Certificate</p>
+                      <p>Workshop</p>
+                    </div>
+                    <div class="pricing-btn">
+                      <a href="#" class="button button-white">Buy Ticket</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="content-wrap">
+                  <div class="price-top">
+                    <h5>Business</h5>
+                  </div>
+                  <div class="price-amount pink">
+                    <h4>$200</h4>
+                  </div>
+                  <p>Entrance</p>
+                  <p>Coffee Break</p>
+                  <p>Certificate</p>
+                  <p>Workshop</p>
+                  <div class="pricing-btn">
+                    <a href="#" class="button button-pink">Buy Ticket</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>  
+      </div>
+     </div> 
+  </section>
+  <section class="opportunity-section">
+    <div class="container">
+      <div class="section-headline">
+        <h2>Opportunities</h2>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="opportunity-content-wrap">
+            <div class="opportunity-img">
+              <img src="image/shirt.jpg" />
+            </div>
+            <div class="opportunity-text">
+              <h6>Get your Tshirt</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="opportunity-content-wrap">
+            <div class="opportunity-img">
+              <img src="image/event-tent.jpg" />
+            </div>
+            <div class="opportunity-text">
+              <h6>Get your Tshirt</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="opportunity-content-wrap">
+            <div class="opportunity-img">
+              <img src="image/alphabet.jpg"/>
+            </div>
+            <div class="opportunity-text">
+              <h6>Get your Tshirt</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="opportunity-content-wrap">
+            <div class="opportunity-img">
+              <img src="image/question-mark.jpg"/>
+            </div>
+            <div class="opportunity-text">
+              <h6>Get your Tshirt</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="call-section">
+    <div class="call-wrap">
+      <div class="container">
+        <div class="section-headline">
+            <h2>Join Art Workshop 2018</h2>
+        </div>
+        <div class="call-content-wrap">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et<br>dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+          <div class="call-btn">
+            <a href="#" class="button button-pink">Buy Ticket</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sponsor-section">
+    <div class="container">
+      <div class="sponsor-section-title">
+        <h2>Who Makes This Possible!</h2>
+      </div>
+      <div class="sponsor-text">
+        <p>Interested in becoming a sponsor? <a href="#">Get in touch</a></p>
+      </div>
+      
+      <div class="sponsor-img">
+        <div class="sponsor-img">
+          <img src="image/co&co.jpg">
+        </div>
+        <div class="sponsor-img">
+          <img src="image/big-soft.jpg">
+        </div>
+        <div class="sponsor-img">
+          <img src="image/super-berry.jpg">
+        </div>
+        <div class="sponsor-img">
+          <img src="image/open-box.jpg">
+        </div>
+        <div class="sponsor-img">
+          <img src="image/peboot.jpg">
+        </div>   
+      </div>
+    </div>
+  </section>
+
+  
+  <div id="map"></div>
+
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4RM7zOgOKq6n2fv407hX28xiL-M6vLdY&callback=initMap"></script>
+
+  <section class="newsletter-section">
+      <div class="newsletter-wrap">
+        <div class="container">
+          <div class="newsletter-content-wrap">
+            <div class="newsletter-text">
+              <h3>Sign Up For Our Newsletter</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="newsletter-input">
+              <form action="#">
+                <input type="text" name="subscribe" value="Your Email Id" >
+                <input type="submit" class="newsletter-btn" value="Subscribe">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+        <div class="footer-content-wrap"></div>
+              <div class="footer-content-title">
+                <h5>Links</h5>
+              </div>
+              <div class="footer-links">
+                <ul class="twocolumns">
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">CAREERS</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">BLOG</a></li>
+                  <li><a href="#">Volunteer</a></li>
+                  <li><a href="#">INFORMATION</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-3">
+  
+              <div class="footer-content-wrap">
+  
+                <div class="footer-content-title">
+                  <h5>Stay tuned</h5>
+                </div>
+                <div class="footer-text">
+                  <p>Connect with us and<br>stay in the loop.</p>
+                </div>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+  
+                </div>
+  
+              </div>
+              <div class="col-3">
+                  <div class="footer-content-title">
+                    <h5>Twitter Feed</h5>
+                  </div>
+                  <div class="footer-text">
+                    <a class="footer-social-icons-twitter-feed" href="#"><i class="fab fa-twitter"></i></a>
+                    RT @DesignerDepot:
+                        "Working on the right
+                        thing  important " - Caterina
+                        Fake #wdd #quote
+                  
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="footer-content-wrap">
+                <div class="footer-content-title">
+                    <h5>Contact us</h5>
+                </div>
+                <div class="footer-text">
+                    <p>Questions? We've got<br>answers. Try us.
+                </div>
+                <div class="footer-btn">
+                  <a href="#">Email Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="copyright-section">
+      <div class="container">
+        <div class="copyright-text">
+          <p>Copyright 2015 Eventum. Designed by Themeum</p>
+        </div>
+      </div>
+    </section>
+
+
+
+  </body>
+  </html>
